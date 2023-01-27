@@ -1,0 +1,396 @@
+@font-face {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: normal;
+
+    src: 
+        url("fonts/Roboto-Regular.woff2") format("woff2"),
+        url("fonts/Roboto-Regular.woff") format("woff");
+    font-display: swap;
+}
+  
+@font-face {
+    font-family: "Roboto";
+    font-weight: 500;
+    font-style: normal;
+
+    src: 
+        url("fonts/Roboto-Medium.woff2") format("woff2"),
+        url("fonts/Roboto-Medium.woff") format("woff");
+    font-display: swap;
+}
+
+:root {
+    --color-athens-gray: #EBEBF1;
+    --color-black-03: #00000008;
+    --color-black-05: #0000000D;
+    --color-black-10: #0000001A;
+    --color-heather: #BBC4D6;
+    --color-heather-50: #BBC4D680;
+    --color-slate-gray: #768298;
+    --search-input-height: 40px;
+}
+
+.visually-hidden {
+    position: absolute;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    white-space: nowrap;
+
+    border: 0;
+
+    clip-path: inset(100%);
+}
+
+.resetted-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.link-wrapper {
+    text-decoration: none;
+
+    color: inherit;
+}
+
+.image {
+    display: block;
+}
+
+.heading {
+    margin: 0;
+
+    text-transform: uppercase;
+
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 44px;
+}
+
+.page {
+    font-family: "Roboto", sans-serif;
+}
+
+.page__body {
+    margin: 0; 
+}
+
+.page__header {
+    position: relative;
+
+    margin-bottom: 72px;
+}
+
+.page-header {
+    min-height: 31px;
+    padding: 16px 20px calc(var(--search-input-height) + 17px);
+}
+
+.page-header__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.page-header__search-form {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    border-top: 1px solid var(--color-heather-50);
+    box-shadow: 0px 3px 10px var(--color-black-05);
+}
+
+.page__main {
+    padding: 0 20px 73px;
+}
+
+.search-input {
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--search-input-height);
+    padding: 0;
+    padding-left: 49px;
+
+    border: none;
+    background: url("images/icon-search.svg") no-repeat 22px 11px;
+}
+
+.search-input::placeholder {
+    color: var(--color-heather);
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.profile-link__icon {
+    position: relative;
+    top: 3px;
+}
+
+.profile-link__name {
+    display: none;
+}
+
+.profile-link__photo {
+    display: none;
+}
+
+.partners__heading {
+    margin-bottom: 30px;
+}
+
+.partners__list {
+    --column-gap: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    row-gap: 20px;
+    column-gap: var(--column-gap);
+}
+
+.partners__item {
+    width: 100%;
+}
+
+.partner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 140px;
+    padding: 15px;
+
+    border: 1px solid var(--color-athens-gray);
+    border-radius: 5px;
+}
+
+.partner__image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (min-width: 768px) { 
+    .page__header {
+        margin-bottom: 71px;
+    }
+
+    .page-header__container {
+        column-gap: 50px;
+    }
+    
+    .page-header {
+        padding: 20px;
+
+        box-shadow: 0px 3px 10px var(--color-black-05);
+    }
+
+    .page-header__search-form {
+        position: static;
+
+        flex-grow: 1;
+
+        border-top: none;
+        box-shadow: none;
+    }
+    
+    .search-input {
+        padding-left: 38px;
+
+        border: 1px solid var(--color-athens-gray);
+        border-radius: 5px;
+        background-position: 12px 10px;
+    }
+
+    .profile-link {
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-link::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        width: 0;
+
+        content: "";
+
+        border: 1px solid var(--color-athens-gray);
+    }
+
+    .profile-link__icon {
+        display: none;
+    }
+
+    .profile-link__name {
+        display: inline;
+
+        margin: 0 10px 0 22px;
+
+        color: var(--color-slate-gray);
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+    }
+    
+    .profile-link__photo {
+        display: block;
+    }
+
+    .partners__list {
+        --columns-count: 3;
+    }
+
+    .partners__item {
+        --width: calc((100% - var(--column-gap) * (var(--columns-count) - 1)) / var(--columns-count));
+
+        width: var(--width);
+    }
+
+    .partner {
+        height: 120px;
+    }
+    
+    .partner__image_henkel {
+        width: 117px;
+        height: 64px;
+    }
+
+    .partner__image_john-deere {
+        width: 183px;
+        height: 34px;
+    }
+
+    .partner__image_mcdonalds {
+        width: 99px;
+        height: 74px;
+    }
+
+    .partner__image_ikea {
+        width: 175px;
+        height: 70px;
+    }
+
+    .partner__image_reebok {
+        width: 187px;
+        height: 38px;
+    }
+
+    .partner__image_nike {
+        width: 143px;
+        height: 74px;
+    }
+
+    .partner__image_caterpillar {
+        width: 196px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 1280px) { 
+    .container {
+        width: calc(100% - (100px * 2));
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    .page-header__container {
+        column-gap: 60px;
+    }
+    
+    .page-header {
+        padding: 20px 0;
+    }
+
+    .search-input {
+        padding-left: 39px;
+
+        background-position: 12px 10px;
+    }
+
+    .page__main {
+        padding: 0 0 73px;
+    }
+
+    .profile-link__name {
+        margin: 0 11px 0 22px;
+    }
+    
+    .partners__heading {
+        font-size: 36px;
+        line-height: 57px;
+    }
+
+    .partners__list {
+        --column-gap: 30px;
+        --columns-count: 4;
+
+        row-gap: 30px;
+        column-gap: var(--column-gap);
+    }
+
+    .partner:hover {
+        box-shadow: -3px 0px 40px var(--color-black-10), 0px 0px 10px var(--color-black-03);
+    }
+
+    .partner__image_henkel {
+        width: 116px;
+        height: 64px;
+    }
+
+    .partner__image_john-deere {
+        width: 234px;
+        height: 44px;
+    }
+
+    .partner__image_mcdonalds {
+        width: 85px;
+        height: 64px;
+    }
+
+    .partner__image_ikea {
+        width: 160px;
+        height: 64px;
+    }
+
+    .partner__image_reebok {
+        width: 234px;
+        height: 48px;
+    }
+
+    .partner__image_nike {
+        width: 122px;
+        height: 64px;
+    }
+
+    .partner__image_caterpillar {
+        width: 234px;
+        height: 36px;
+    }
+}
+
+
+
+
+
+
+
